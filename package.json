@@ -1,0 +1,7 @@
+{
+    "name": "livewire-ace",
+    "version": "0.0.2",
+    "devDependencies": {
+        "ace-builds": "^1.36.3"
+    }
+}

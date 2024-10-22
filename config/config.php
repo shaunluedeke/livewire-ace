@@ -2,17 +2,14 @@
 
 return [
     'defaults' => [
-        'theme' => 'dracula',
+        'theme' => null,
         'language' => 'javascript'
     ],
-    'assets' => [
-        'modes' => [
-            'html',
-            'javascript',
-            'golang'
-        ],
-        'themes' => [
-            'dracula'
-        ]
+    'extensions' => [
+        'language_tools',
+        'searchbox',
+        'inline_autocomplete',
+        'settings_menu',
+        'beautify',
     ]
 ];

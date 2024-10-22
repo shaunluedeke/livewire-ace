@@ -1,0 +1,14 @@
+﻿vendor
+.idea
+node_modules/ace-builds/css
+node_modules/ace-builds/src
+node_modules/ace-builds/src-min
+node_modules/ace-builds/src-noconflict
+node_modules/ace-builds/*.js
+node_modules/ace-builds/*.md
+node_modules/ace-builds/*.ts
+node_modules/ace-builds/*.json
+node_modules/ace-builds/*.txt
+node_modules/ace-builds/*.html
+node_modules/ace-builds/.nojekyll
+node_modules/ace-builds/LICENSE

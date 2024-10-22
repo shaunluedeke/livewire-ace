@@ -2,58 +2,36 @@
 
 namespace Panikka\LivewireAce;
 
+use Illuminate\View\View;
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class AceEditorBase extends Component
 {
-    public string $editorView;
-    public ?string $editorLayout = '';
-
     public string $value = '';
-    public string $language = '';
-
-    protected $listeners = ['languageChanged'];
+    public string $mode = '';
 
     public function mount()
     {
-        $this->editorView = $this->editorView
-            ?? "livewire-ace::editor";
     }
 
-    public function render()
+    public function render(): View
     {
-        if (empty($this->editorLayout)) {
-            return view($this->editorView);
-        }
-
-        return view($this->editorView)
-            ->layout($this->editorLayout);
-    }
-
-    /**
-     * Event listener for programmatically changing the
-     * session language mode.
-     *
-     * @param string $lang
-     */
-    public function languageChanged(string $lang)
-    {
-        $this->language = $lang;
-        $this->emit('changeLanguage');
+        return view('livewire-ace::editor');
     }
 
     /**
      * Callback function to listen for value updates.
      */
-    public function updatedValue(string $value)
+    #[On('updateValue')]
+    public function updatedValue(string $value): void
     {
+        $this->value = $value;
     }
-
-    /**
-     * Callback function to listen for language updates.
-     */
-    public function updatedLanguage(string $lang)
+    
+    public function updatedMode(string $mode): void
     {
-        $this->emitSelf('changeLanguage', $lang);
+        $this->mode = $mode;
+        $this->dispatch('changeMode', $mode)->self();
     }
 }

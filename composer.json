@@ -1,5 +1,5 @@
 {
-    "name": "panikka/livewire-ace",
+    "name": "shaunluedeke/livewire-ace",
     "description": "Ace editor for livewire",
     "version": "0.0.2",
     "type": "library",
@@ -11,13 +11,23 @@
         }
     ],
     "require": {
-        "php": ">=7.4|8.0",
-        "livewire/livewire": "^2.0",
-        "illuminate/support": "^6.0|^7.0|^8.0"
+        "php": "^8.1|^8.2|^8.3",
+        "livewire/livewire": "^3",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.5|^9.1",
+        "portavice/laravel-pint-config": "v2.0.0"
     },
     "autoload": {
         "psr-4": {
             "Panikka\\LivewireAce\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
         }
     },
     "extra": {
@@ -26,5 +36,7 @@
                 "Panikka\\LivewireAce\\LivewireAceServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
